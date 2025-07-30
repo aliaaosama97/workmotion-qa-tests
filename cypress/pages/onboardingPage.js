@@ -19,6 +19,12 @@ class OnboardingPage {
     cy.get('[data-cy="country-selection-get-started-btn"]')
       .should('be.visible')
       .click();
+    // Select the type of contract 
+    cy.get('[data-testid="onboarding-product-workglobal"]').click().then((interception) =>{
+      cy.get('[data-cy="product-selection-begin-onboarding-btn"]')
+      .should('be.visible')
+      .click();
+    })
   }
 
   clickAddTalent() {
