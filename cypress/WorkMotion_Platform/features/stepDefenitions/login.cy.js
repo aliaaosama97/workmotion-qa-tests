@@ -1,6 +1,6 @@
 // cypress/e2e/login.cy.js
 
-import loginPage from '../pages/loginPage';
+import loginPage from '../loginPage';
 
 describe('Login Tests - WorkMotion', () => {
   const validEmail = 'avengers.engineering+hr1@workmotion.com';
@@ -24,4 +24,12 @@ describe('Login Tests - WorkMotion', () => {
 
     loginPage.assertErrorMessage();
   });
+
+  
+
+
+
+
+
+
 });

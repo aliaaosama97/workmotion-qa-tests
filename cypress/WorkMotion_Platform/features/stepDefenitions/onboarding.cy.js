@@ -1,5 +1,5 @@
-import loginPage from '../pages/loginPage';
-import onboardingPage from '../pages/onboardingPage';
+import loginPage from '../loginPage';
+import onboardingPage from '../onboardingPage';
 
 describe('Talent Onboarding Tests', () => {
   const validEmail = 'avengers.engineering+hr1@workmotion.com';
