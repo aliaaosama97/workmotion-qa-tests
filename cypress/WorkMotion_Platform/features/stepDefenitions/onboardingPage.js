@@ -1,16 +1,11 @@
 class OnboardingPage {
   openOnboardingTab() {
-    // Intercept BEFORE the action that triggers it
-    cy.intercept('GET', '**/onboarding/intro/hire*').as('hirePage');
-
-    // Click sequence to trigger request
+    // Click on "Hire Now" button
     cy.get('[data-testid="add-employee-menu"]').should('be.visible').click();
     cy.get('[data-testid="create-new-item"]').should('be.visible').click();
-
-    // Wait for the API request to be made
-    cy.wait('@hirePage').then((interception) => {
-      cy.get('[data-testid="onboarding-hire-option-talent"]').should('be.visible').click();
-    });
+    
+    // Click on Talent option
+    cy.get('[data-testid="onboarding-hire-option-talent"]').should('be.visible').click();
 
     // type the country then press enter
     cy.get('.css-1wopavw-control').click().type('Germany{enter}');
