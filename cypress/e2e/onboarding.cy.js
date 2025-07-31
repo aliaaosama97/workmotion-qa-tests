@@ -8,7 +8,7 @@ describe('Talent Onboarding Tests', () => {
   const newTalent = {
     FirstName: 'Jane',
     LastName: 'Cypress',
-    DateOfBirth: '13-01-1997',
+    DateOfBirth: '13/01/1997',
     AddressLine1: 'building 10',
     AddressLine2: 'starsse 15',
     CityOrState: 'Koln',
@@ -19,8 +19,8 @@ describe('Talent Onboarding Tests', () => {
     JobDescriptioninGerman: 'responsible for project managing',
     email: 'jane.cypress@example.com',
     country: 'Germany',
-    startDate: '01-08-2025',
-    endDate: '01-08-2026',
+    startDate: '20/08/2025',
+    endDate: '01/10/2026',
     equipment: 'laptop'
   };
 
@@ -37,7 +37,6 @@ describe('Talent Onboarding Tests', () => {
 
   it('should add a new talent and find them in the list', () => {
     onboardingPage.openOnboardingTab();
-    onboardingPage.clickAddTalent();
     onboardingPage.fillTalentForm(newTalent);
     onboardingPage.submitTalent();
 
