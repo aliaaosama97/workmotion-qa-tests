@@ -1,5 +1,6 @@
 import { timeout } from "puppeteer-core";
 
+
 class OnboardingPage {
   openOnboardingTab() {
     // Click on "Hire Now" button
@@ -148,8 +149,8 @@ class OnboardingPage {
   }
 
   submitTalent() {
-   /* cy.get('label[for="f1a0a19f-8536-3987-a403-5f3fda8169fd"]',  { timeout: 10000 }).should('exist').should('be.visible').click();
-    cy.get('[data-cy="steps-finish-btn"]',  { timeout: 10000 }).should('exist').should('be.visible').click();*/
+    cy.get('label[for="f1a0a19f-8536-3987-a403-5f3fda8169fd"]',  { timeout: 10000 }).should('exist').should('be.visible').click();
+    cy.get('[data-cy="steps-finish-btn"]',  { timeout: 10000 }).should('exist').should('be.visible').click();
   }
 
   searchTalent(name) {
