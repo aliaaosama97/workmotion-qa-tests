@@ -26,9 +26,50 @@ class OnboardingPage {
     //cy.contains('Add talent').click();
   }
 
-  fillTalentForm({ name, email, country, startDate }) {
-    /*cy.get('input[name="name"]').type(name);
-    cy.get('input[name="email"]').type(email);
+  fillTalentForm({ FirstName, LasttName,DateOfBirth,AddressLine1,
+    AddressLine2,CityOrState,PostalCode , email, country, startDate }) {
+    cy.get('[data-cy="steps-candidate-first-name-input"]').type(FirstName);
+    cy.get('[data-cy="steps-candidate-last-name-input"]').type(LasttName);
+    cy.get('#2119d6af-29d8-3f3e-80dd-77252832b4cc').then(($input) => {
+      cy.wrap($input)
+        .invoke('val', DateOfBirth)
+        .trigger('change');
+    });
+    cy.get('[data-cy="steps-talent-is-local-yes-radio"]').click();
+    cy.get('[data-cy="steps-talent-is-senior-no-radio"]').click();
+
+    //click on the radio button to add the talant addres
+    cy.get('[data-cy="steps-address-selector-hr-yes-radio"]').click().then(() =>{
+      cy.get('[data-cy="steps-address-line-one-hr-input"]')
+      .should('be.visible')
+      .type(AddressLine1);
+
+      cy.get('[data-cy="steps-address-line-two-hr-input"]')
+      .should('be.visible')
+      .type(AddressLine2);
+
+      cy.get('[data-cy="steps-city-state-hr-input"]')
+      .should('be.visible')
+      .type(CityOrState);
+
+      cy.get('[data-cy="steps-postal-code-hr-input"]')
+      .should('be.visible')
+      .type(PostalCode);
+    });
+
+    //work from home 
+    cy.get('[data-cy="steps-work-from-home-selector-yes-radio"]').click();
+    //will they travel
+    cy.get('[data-cy="steps-travel-work-selector-no-radio"]').click();
+    // vist site 
+    cy.get('[data-cy="steps-construction-work-selector-no-radio"]').click();
+
+    //click Continue
+    cy.get('[data-cy="steps-continue-btn"]').click();
+    
+
+
+    /*cy.get('input[name="email"]').type(email);
     cy.get('select[name="country"]').select(country);
     cy.get('input[name="start_date"]').type(startDate);*/
   }

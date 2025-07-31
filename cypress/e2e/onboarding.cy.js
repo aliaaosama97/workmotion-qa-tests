@@ -6,7 +6,13 @@ describe('Talent Onboarding Tests', () => {
   const validPassword = 'DummyPass.12';
 
   const newTalent = {
-    name: 'Jane Cypress',
+    FirstName: 'Jane',
+    LastName: 'Cypress',
+    DateOfBirth: '13/01/1997',
+    AddressLine1: 'building 10',
+    AddressLine2: 'starsse 15',
+    CityOrState: 'Koln',
+    PostalCode: '12556',
     email: 'jane.cypress@example.com',
     country: 'Germany',
     startDate: '2025-08-01'
