@@ -1,13 +1,19 @@
 import TalentSearchViewPage from '../WorkMotion_Platform/features/stepDefenitions/talentSearchViewPage';
+import loginPage from '../WorkMotion_Platform/features/stepDefenitions/loginPage';
 
-const page = new TalentSearchViewPage();
-const talentName = {
-  name: 'Jane Cypress',
-  email: 'jane.cypress@example.com',
-  country: 'Germany'
-  }; 
+
+ 
 
 describe('Talent search and view functionality', () => {
+  const validEmail = 'avengers.engineering+hr1@workmotion.com';
+  const validPassword = 'DummyPass.12';
+
+  const talentName = {
+  name: 'Jane Cypress',
+    email: 'jane.cypress@example.com',
+    country: 'Germany',
+    startDate: '2025-08-01'
+  };
 
   beforeEach(() => {
     //Set desktop viewport
@@ -22,13 +28,13 @@ describe('Talent search and view functionality', () => {
 
   it('should find the newly added talent in search results', () => {
     page.searchTalentByName(talentName.name);
-    page.verifyTalentInSearchResults(talentName);
+    page.verifyTalentInSearchResults(talentName.name);
   });
 
   it("should display newly added talent's information correctly", () => {
-    page.searchTalentByName(talentName);
-    page.selectTalentFromSearchResults(talentName);
-    page.verifyTalentDetails(talentName);
+    page.searchTalentByName(talentName.name);
+    page.selectTalentFromSearchResults(talentName.name);
+    page.verifyTalentDetails(talentName.name);
   });
 
 });
