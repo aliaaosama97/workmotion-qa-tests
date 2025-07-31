@@ -26,10 +26,9 @@ class OnboardingPage {
     //cy.contains('Add talent').click();
   }
 
-  fillTalentForm({ FirstName, LasttName,DateOfBirth,AddressLine1,
-    AddressLine2,CityOrState,PostalCode , email, country, startDate }) {
+  fillTalentForm({ FirstName, LastName,DateOfBirth,AddressLine1,AddressLine2,CityOrState,PostalCode , JobTitle, qualification, JobDescription,JobDescriptioninGerman,email, country, startDate, endDate,equipment }) {
     cy.get('[data-cy="steps-candidate-first-name-input"]').type(FirstName);
-    cy.get('[data-cy="steps-candidate-last-name-input"]').type(LasttName);
+    cy.get('[data-cy="steps-candidate-last-name-input"]').type(LastName);
     cy.get('#2119d6af-29d8-3f3e-80dd-77252832b4cc').then(($input) => {
       cy.wrap($input)
         .invoke('val', DateOfBirth)
@@ -66,7 +65,48 @@ class OnboardingPage {
 
     //click Continue
     cy.get('[data-cy="steps-continue-btn"]').click();
-    
+
+    //job title, qualification, JobDescription
+    cy.get('[data-cy="steps-job-title-input"]').type(JobTitle);
+
+    cy.get('[data-cy="steps-job-title-qualification-textarea"]').type(qualification);
+
+    cy.get('[data-cy="steps-job-description-textarea"]').type(JobDescription);
+
+    cy.get('[data-cy="steps-job-description-local-language-textarea"]').type(JobDescriptioninGerman);
+
+    //Employment type
+    cy.get('[data-cy="steps-employment-type-full-time-radio"]').click();
+
+    //contract type
+    cy.get('[data-cy="steps-contract-type-fixed-term-radio"]').click();
+
+    //start date
+    cy.get('#0cf8b065-5ee8-3a80-aa36-01afa757637d').then(($input) => {
+      cy.wrap($input)
+        .invoke('val', startDate)
+        .trigger('change');
+    });
+    //end date
+    cy.get('#d1e7a68e-3f67-3864-8f31-3129aae3295a').then(($input) => {
+      cy.wrap($input)
+        .invoke('val', endDate)
+        .trigger('change');
+    });
+
+    //Name of signatory
+     cy.get('[data-cy="steps-job-description-local-language-textarea"]').type(FirstName + LastName);
+
+     //titel signatory
+     cy.get('[data-cy="steps-signatory-title-input"]').type(JobTitle);
+
+     //email 
+     cy.get('[data-cy="steps-signatory-email-input"]').type(email);
+
+     //laptop 
+     cy.get('[data-cy="steps-telework-equipment-input"]').type(equipment);
+    //click continue
+    cy.get('[data-cy="steps-continue-btn"]').click();
 
 
     /*cy.get('input[name="email"]').type(email);
