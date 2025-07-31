@@ -1,5 +1,5 @@
-import loginPage from '../loginPage';
-import onboardingPage from '../onboardingPage';
+import loginPage from '../WorkMotion_Platform/features/stepDefenitions/loginPage';
+import onboardingPage from '../WorkMotion_Platform/features/stepDefenitions/onboardingPage' ;
 
 describe('Talent Onboarding Tests', () => {
   const validEmail = 'avengers.engineering+hr1@workmotion.com';

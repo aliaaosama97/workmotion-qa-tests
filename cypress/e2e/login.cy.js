@@ -1,6 +1,6 @@
 // cypress/e2e/login.cy.js
 
-import loginPage from '../loginPage';
+import loginPage from '../WorkMotion_Platform/features/stepDefenitions/loginPage';
 
 describe('Login Tests - WorkMotion', () => {
   const validEmail = 'avengers.engineering+hr1@workmotion.com';
