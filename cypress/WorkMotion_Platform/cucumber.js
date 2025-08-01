@@ -1,8 +1,7 @@
 module.exports = {
     default: {
       require: [
-        'workmotion-qa-tests/cypress/WorkMotion_Platform/stepDefenitions/*.js',
-        'features/support/*.js'
+        'workmotion-qa-tests/cypress/WorkMotion_Platform/stepDefenitions/*.js'
       ],
       format: ['pretty'], 
       paths: ['cypress/WorkMotion_Platform/features/*.feature'], 
